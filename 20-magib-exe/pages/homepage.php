@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,14 +8,12 @@
     <title>Accueil 20</title>
     <link rel="stylesheet" href="css/myCSS.css">
 </head>
+
 <body>
     <h1>Accueil 20</h1>
-    <ul class="nav">
-        <li><a href="./">Accueil 20</a>
-        <li><a href="?u=formateurs">Formateurs WEB</a></li>
-        <li><a href="?u=stagiaires">Stagiaires WEB</a></li>
-        <li><a href="?u=classes">Classes CF2m</a></li>
-    </ul>
+    <?php
+    include "menu.php"
+    ?>
     <container>
         <h2>Exercice 20</h2>
         <h3>Instructions</h3>
@@ -31,9 +30,11 @@
             <li>! Il fait toujours passer par index.php pour afficher une page, le lien vers le css est lié à l'emplacement du contrôleur frontal !</li>
             <li>Sur la page Formateurs WEB, vous verrez tous les formateurs, faîtes de même pour les autres pages! Tous les stagiaires sur stagiaires et toutes les classes sur classe.</li>
             <li>Ne m'envoyez pas votre exercice en pull request sur mon github avant que je vous le dise!</li>
-            
+
         </ul>
         <h4>Bon travail</h4>
     </container>
+   
 </body>
+
 </html>

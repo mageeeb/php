@@ -11,12 +11,9 @@
 
 <body>
     <h1>Stagiaires WEB</h1>
-    <ul class="nav">
-        <li><a href="./">Accueil 20</a>
-        <li><a href="?u=formateurs">Formateurs WEB</a></li>
-        <li><a href="?u=stagiaires">Stagiaires WEB</a></li>
-        <li><a href="?u=classes">Classes CF2m</a></li>
-    </ul>
+    <?php
+    include "menu.php"
+    ?>
     <container>
         <h2>Liste Stagiaires WEB</h2>
         <?php

@@ -35,3 +35,4 @@ const CLASS_CF2M = [
     "Web Developer FullStack",
     "Technicien support PC et réseaux",
 ];
+
