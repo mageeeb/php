@@ -15,9 +15,9 @@
 
 <body>
     <div class="baniere">
-        <img src="/img/banniere.jpg" alt="img">
+        <img src="/img/senegal.jpg" alt="img">
         <div class="text">
-            <h1>Athènes</h1>
+            <h1>Voyage au Sénégal</h1>
         </div>
     </div>
     <?php

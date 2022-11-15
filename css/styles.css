@@ -123,6 +123,11 @@ p{
   left: 15em;
   
 }
+.imge{
+  width: 10px;
+    position: relative;
+  
+}
 /*-----------------------------------histoire-----------------------------------*/
 .hist{
   background-color: lightgrey;

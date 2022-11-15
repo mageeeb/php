@@ -15,28 +15,24 @@
 
 <body>
     <div class="baniere">
-        <img src="/img/banniere.jpg" alt="img">
+        <img src="/img/senegal.jpg" alt="img">
         <div class="text">
-            <h1>Athènes</h1>
+            <h1>Voyage au Sénégal</h1>
         </div>
     </div>
     <?php
     include "menu.php";
-    //var_dump($_POST,$GLOBALS);
+    
     ?>
     <div class="geo">
         <h1 class="titre">Bienvenue sur la page geographie</h1>
-        <img src="/img/geographie.png" alt="img">
-        <p>Athènes s'étend sur la plaine d'Attique, dominée par le mont Ægialée (en) à l'ouest, le mont Parnès au nord, le mont Lycabette au nord-est (faisant partie de chaîne Pentélique), le mont Hymette à l'est, et le golfe Saronique au sud-ouest. En raison de ces limites naturelles, il est peu probable de voir la ville s'étendre beaucoup plus qu'elle ne l'est aujourd'hui. Par ailleurs, la géomorphologie d'Athènes contribue beaucoup aux problèmes de pollution atmosphérique, surnommé le néfos, dont elle souffre aujourd'hui (Los Angeles aux États-Unis connaît la même géomorphologie et les mêmes conséquences).
+        <img  src="/img/carte-geographique-senegal.png" class="img" alt="img">
+        <p>Couvrant 196 722 kilomètres carrés, le territoire sénégalais est compris entre 120 8' et 160 41' de latitude nord et 110 21' et 170 32' de longitude ouest. Il est limité à l'ouest par l'océan Atlantique, au nord par le fleuve Sénégal, à l'est par un affluent de celui-ci (Falémé), au sud-est par les contreforts du Fouta-Djalon et, enfin, au sud par la Guinée-Bissau. La presqu'île du cap Vert (où se situe la capitale Dakar) constitue la partie la plus occidentale de toute l'Afrique continentale.</p>
+        <p>La topographie est généralement basse, composée de plaines et de bas plateaux dépassant rarement 100 mètres d'altitude. Deux fleuves importants traversent le pays. Le Sénégal, d'une part, qui a donné son nom au pays, est long de 1 750 kilomètres et sert de frontière avec la Mauritanie. Il prend sa source dans le massif du Fouta-Djalon (Guinée) et se jette dans l'Atlantique à Saint-Louis. Déroulant ses méandres dans une vaste plaine alluviale, il connaît une période de crue entre mai et octobre (5 000 m3/s dans le delta). Le Sénégal constitue une providence pour les agriculteurs, du fait de l'étendue des surfaces inondées (1 million d'hectares). Moins important, le fleuve Gambie naît aussi dans le Fouta-Djalon et se termine par un estuaire dans l'Atlantique. Mais la plus grande partie de son cours est située en Gambie, petit pays de 11 295 kilomètres carrés qui s'immisce en doigt de gant à l'intérieur du territoire sénégalais. Le pays est également traversé par des fleuves secondaires (Saloum et Casamance dans les régions éponymes).</p>
 
-            Les terres sont rocailleuses et peu fertiles. La ville antique était construite au pied de l'Acropole. Dans l'Antiquité et jusqu'au début du xxe siècle, le port du Pirée (en grec, Pireas) était une ville bien distincte mais il fait aujourd'hui partie de la ville.
-
-            Les quartiers de Pláka (situé au pied de l'Acropole), Kolonáki, Monastiráki, Psyrí et Exárcheia (ou Exarchia) constituent le centre de la ville moderne. Lorsqu'Athènes est devenue la capitale du royaume de Grèce au xixe siècle, les architectes allemands ont tenté de créer une ville nouvelle de style néoclassique autour des places Omónia (la Concorde en grec moderne) et Syntagma (la Constitution). Ces places restent des centres névralgiques, et la plupart des monuments et musées se trouvent dans ces quartiers (le Parlement occupe le bâtiment du palais royal sur Syntagma) mais pour le reste le style néoclassique ne saute pas aux yeux, les bâtiments subsistants étant noyés dans les constructions environnantes.
-
-            Les parties nouvelles de la ville sont pour la plupart en béton gris et souffrent d'un manque d'espaces verts. Les Athéniens ont surnommé leur ville Tsimentoupolis ou Tsimentopoli (« la ville de ciment » ou « la ville de béton »).
-            Le climat est méditerranéen (classification de Köppen : Csa), les étés sont chauds et secs, les hivers sont doux. Les influences continentales sont présentes aussi, en raison des montagnes qui bordent le tour de la ville. Athènes est une ville sèche (414 mm de précipitations annuelles), la sécheresse estivale dure en réalité d'avril à octobre. Les mois de juillet et d'août sont les plus chauds et les plus secs. Lorsque le vent du nord souffle sur Athènes en hiver, il peut apporter des précipitations sous forme de neige, qui tombent surtout sur la banlieue nord de la capitale. Le 9 janvier 2017, d'importantes chutes de neige se sont produites à Athènes en raison d'une vague de froid exceptionnelle en Europe centrale. Les tempêtes de neige sont peu fréquentes; cependant, lorsqu'elles surviennent, elles causent de graves perturbations. Athènes détient le record de la plus haute température enregistrée en Europe, le 10 juillet 1977 : 48 °C (118,4 °F).</p>
+        <p>Le climat est de type sahélien dans la moitié nord et dans la région centrale : la saison sèche dure de novembre à mai, avec des températures élevées (près de 40 0C). La végétation est maigre en dehors de la vallée du Sénégal. Le climat est de type soudanien au sud et au sud-est. Les précipitations sont alors plus abondantes. La Casamance connaît, pour sa part, un climat de type subguinéen, avec un volume pluviométrique d'environ 1 300 mm/an durant sept mois, favorable à la culture du palmier à huile et du riz, de même qu'au développement de la forêt. Rafraîchis par le courant marin des Canaries, les alizés en provenance de l'Atlantique balaient régulièrement le littoral, surtout entre Dakar et Saint-Louis. Les températures sont fraîches en hiver, mais chaudes et accompagnées de pluies au cours de l'été et au début de l'automne.</p>
     </div>
-   
+
 </body>
 
 </html>
