@@ -29,7 +29,7 @@
         <h1 class="titre">Bienvenue sur le site du voyageur</h1>
         <img class="img" src="../img/routard.png" alt="img">
 
-        <p>Le Sénégal, en forme longue la république du Sénégal, est un État d'Afrique de l'Ouest.</p>
+        <p>Nous vous présentons aujourd'hui le Sénégal, en forme longue la république du Sénégal, qui est un État d'Afrique de l'Ouest.</p>
 
         <p> Il est bordé par l'océan Atlantique à l'ouest, la Mauritanie au nord-est, le Mali à l'est-sud-est, la Guinée au sud-est et la Guinée-Bissau au sud-sud-ouest. La Gambie forme une quasi-enclave dans le Sénégal, pénétrant à plus de 302 km à l'intérieur de ses terres. Les îles du Cap-Vert sont situées à 560 km de la côte sénégalaise.</p>
 
@@ -38,7 +38,7 @@
         <p> Le Sénégal fait partie de la Communauté économique des États de l'Afrique de l'Ouest (CÉDÉAO). Intégré aux principales instances de la communauté internationale, le Sénégal fait également partie de l'Union africaine (UA), de la Communauté des États sahélo-sahariens (CES), de l'Organisation internationale de la francophonie et de l'Organisation de la coopération islamique.</p>
 
 
-        <p>Pour plus de renseignement, vsitez la page <a href="https://fr.wikipedia.org/wiki/S%C3%A9n%C3%A9gal">Sénégal</a> </p>
+        <p>Pour plus de renseignement, vous pouvez vsitez la page <a href="https://fr.wikipedia.org/wiki/S%C3%A9n%C3%A9gal">Sénégal.</a> </p>
 
     </div>
 

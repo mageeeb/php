@@ -21,11 +21,11 @@ body {
   position: relative;
 
 }
-.baniere img{
+/*.baniere img{
   width: 1280px;
   height: 100%;
   border-radius: 10px;
-}
+}*/
 
 .baniere .text{
   background: whitesmoke;
@@ -123,11 +123,7 @@ p{
   left: 15em;
   
 }
-.imge{
-  width: 10px;
-    position: relative;
-  
-}
+
 /*-----------------------------------histoire-----------------------------------*/
 .hist{
   background-color: lightgrey;
