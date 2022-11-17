@@ -15,7 +15,7 @@
 
 <body>
   <div class="baniere">
-    <img src="/img/senegal.jpg" alt="img">
+    <img class="imge" src="img/senegal.jpg" alt="img">
     <div class="text">
       <h1>Voyage au Sénégal</h1>
     </div>
@@ -26,7 +26,7 @@
   ?>
   <div class="cont">
     <h1 class="titre">Nous contacter</h1>
-    <img src="../img/contacts.jpg" alt="img">
+    <img src="img/contacts.jpg" alt="img">
     <form action="" method="post" name="monform">
       <div class="mb-3">
         <label for="exampleFormControlInput1" class="form-label">Email address</label>

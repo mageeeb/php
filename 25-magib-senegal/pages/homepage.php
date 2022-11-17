@@ -8,14 +8,14 @@
     <meta name="author" content="" />
     <title>Accueil</title>
 
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link rel="icon" type="/image/x-icon" href="assets/favicon.ico" />
 
     <link href="css/styles.css" rel="stylesheet" />
 </head>
 
 <body>
     <div class="baniere">
-        <img src="/img/senegal.jpg" alt="img">
+        <img class="imge" src="img/senegal.jpg" alt="img">
         <div class="text">
             <h1>Voyage au Sénégal</h1>
         </div>
@@ -27,7 +27,7 @@
     
     <div class="home">
         <h1 class="titre">Bienvenue sur le site du voyageur</h1>
-        <img class="img" src="../img/routard.png" alt="img">
+        <img class="imgess" src="img/routard.png" alt="img">
 
         <p>Nous vous présentons aujourd'hui le Sénégal, en forme longue la république du Sénégal, qui est un État d'Afrique de l'Ouest.</p>
 

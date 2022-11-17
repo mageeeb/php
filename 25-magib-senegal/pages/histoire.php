@@ -15,17 +15,18 @@
 
 <body>
     <div class="baniere">
-        <img src="/img/senegal.jpg" alt="img">
+        <img class="imge" src="img/senegal.jpg" alt="img">
         <div class="text">
             <h1>Voyage au Sénégal</h1>
         </div>
+    </div>
     </div>
     <?php
     include "menu.php";
     ?>
     <div class="hist">
         <h1 class="titre">Bienvenue sur la page histoire </h1>
-        <img src="../img/hist-sen.jpg" alt="img">
+        <img src="img/hist-sen.jpg" alt="img">
 
         <p>Comme pour bien d'autres pays du continent africain, l'écriture de cette histoire se heurte à de multiples difficultés2, tant méthodologiques qu'idéologiques.</p>
 
@@ -39,7 +40,7 @@
 
             Les traditions orales – désormais reconnues patrimoine oral et immatériel de l'humanité par l'UNESCO – sont un peu mieux prises en compte, comme en témoigne ce colloque international consacré aux traditions orales du Kaabu en 1980 à Dakar10, mais n'ont pas encore trouvé une vraie place dans la construction du savoir à l'occidentale.</p>
 
-        
+
     </div>
 
 
