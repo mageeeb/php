@@ -21,11 +21,29 @@ body {
   position: relative;
 
 }
-/*.baniere img{
+.imge{
   width: 1280px;
   height: 100%;
   border-radius: 10px;
-}*/
+}
+
+.img{
+  
+    border: 2px solid black;
+    border-radius: 20px;
+   margin-left: 15em;
+}
+
+.imges{
+  border: 2px solid black;
+    border-radius: 20px;
+    margin-left: 3.5em;
+    margin-top: 10px;
+}
+
+.imgess{
+  width: 300px;
+}
 
 .baniere .text{
   background: whitesmoke;
@@ -162,9 +180,17 @@ h1{
   font-style: italic;
   font-size: 24px;
 }
-/*---------------------------------------------------------liens---------------------------------*/
-.link{
-  list-style: none;
-  text-decoration: none;
-  color: black;
+/*---------------------------------tourisme---------------------------------*/
+.tourisme{
+  background-color: lightgrey;
+    border-radius: 10px;
+}
+.tourisme img{
+  position: relative;
+    left: 15em;
+}
+
+/*-----------------------galerie-----------------*/
+tr img{
+  width: 26.5em;
 }
