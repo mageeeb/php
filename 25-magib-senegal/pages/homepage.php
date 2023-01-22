@@ -8,7 +8,7 @@
     <meta name="author" content="" />
     <title>Accueil</title>
 
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+
 
     <link href="css/styles.css" rel="stylesheet" />
 </head>
