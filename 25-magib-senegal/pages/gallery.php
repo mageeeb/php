@@ -15,7 +15,7 @@
 
 <body>
     <div class="baniere">
-        <img class="imge" src="/img/senegal.jpg" alt="img">
+
         <div class="text">
             <h1>Voyage au Sénégal</h1>
         </div>
