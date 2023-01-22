@@ -1,1 +1,0 @@
-<footer><p>CF2M &copy; : <?=date("Y") ?></p></footer>
