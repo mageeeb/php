@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Luxurious+Roman&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');
+
+
+body{
+    background-color: RGB(35, 35, 35);
+    margin: 0px;
+    overflow-x: hidden;
+}
+
+.mainpaintimg{
+    width: 100%;
+    height: auto;
+}
+
+nav{
+    position: fixed;
+    overflow: hidden;
+    width: 100%;
+    background-color: RGBA(35, 35, 35,.9);
+    margin: 0px;
+    z-index: 100;
+    top: 0px;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+}
+
+li{
+    list-style-type: none;
+}
+
+a{  
+    font-family: 'Luxurious Roman', cursive;
+    text-decoration: none;
+    color: white;
+}
+
+header li{
+    letter-spacing: 0.5px;
+    float: left;
+    font-size: 1.2em;
+
+}
+
+header li a{
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    padding: 18px 16px;
+}
+
+header li a:hover{
+    color: wheat;
+    cursor: crosshair;
+    text-decoration:underline;
+    text-underline-offset: 5px;
+}
+
+h1{
+    position: absolute;
+    font-family: 'Italianno';
+    text-align: center;
+    font-size: 200px;
+    color: white;
+    font-weight:normal;
+
+}
+
+.pt1{
+    position: relative;
+    top: -880px;
+    left: 220px;
+    color: white;
+
+}
+
+.pt2{
+    position: relative;
+    top: -790px;
+    left: 300px;
+    color: white;
+
+}
+
+.pt3{
+    position: relative;
+    top: -600px;
+    left: 300px;
+    color: wheat;
+
+}
+
+.carte{
+    position: relative;
+    top: 240px;
+    left: 1200px;
+    width: 550px;
+    height: auto;
+    border-radius: 30px;
+}
+
+.ptittxt{
+    position: relative;
+    top: 260px;
+    left: 670px;
+    color: white;
+    font-size: 15px;
+}
+
+.txtrome1{
+    font-family: 'Luxurious Roman', cursive;
+    position: relative;
+    top: -60px;
+    left: 100px;
+    font-size: 31px;
+    width: 820px;
+    height: auto;
+    text-align: justify;
+}
+
+p{
+    color: white;
+}
+
+.royauté{
+    width: 100%;
+    height: auto;
+}
+
+.titre2{
+    position: relative;
+    top: -800px;
+    font-size: 230px;
+}
+
+.deco{
+    position: absolute;
+    width: 500px;
+    top: 1000px;
+    left: 37%;
+    margin: 0 auto;
+}
+
+.txtrome2{
+    font-family: 'Luxurious Roman', cursive;
+    position: relative;
+    left: 20%;
+    font-size: 31px;
+    width: 1200px;
+    height: auto;
+    text-align: justify;
+}
+
+.titre3{
+    position: absolute;
+    left: 250px;
+    top: 200px;
+}
+
+.LJB{
+    position: absolute;
+    width: 1200px;
+    height: auto;
+    top: -75px;
+    right: -50px;
+}
+
+#larep{
+    position: relative;
+    top: -115px;
+    left: -205px;
+    color: #b19b85;
+}
+
+#roro{
+    position: relative;
+    top: 150px;
+    right: 655px;
+    color: #51121e;
+}
+
+
+
+.txtrome3{
+    font-family: 'Luxurious Roman', cursive;
+    position: relative;
+    top: 1050px;
+    left: 50px;
+    font-size: 28px;
+    width: 950px;
+    height: auto;
+    text-align: justify;
+    padding-bottom: 80px;
+}
+
+.RoTibre{
+    position: relative;
+    top: 1200px;
+    left: 1200px;
+    width: 550px;
+    height: auto;
+    border-radius: 30px;
+}
+
+.colisee{
+    position: relative;
+    top: -200px;
+    width: 100%;
+    height: auto;
+
+}
+
+.titre4{
+    position: relative;
+    top: -1050px;
+    left: -80px;
+    font-size: 230px;
+}
+
+.colloseum{
+    position: absolute;
+    width: 500px;
+    top: 1200px;
+    left: 37%;
+    margin: 0 auto;
+}
+
+.txtrome4{
+    font-family: 'Luxurious Roman', cursive;
+    position: relative;
+    top: -50px;
+    left: 500px;
+    font-size: 25px;
+    width: 950px;
+    height: auto;
+    text-align: justify;
+}
+

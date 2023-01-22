@@ -1,0 +1,61 @@
+.corps {
+    width: 1000px;
+    position: absolute;
+    background-color: beige;
+    margin-left: 100px;
+    margin-right: 100px;
+    border: 3px black solid;
+}
+
+.logo {
+    width: 250px;
+    height: 250px;
+    border: 2px black solid;
+    position: relative;
+}
+
+.header {
+    background-color: red;
+    width: 960px;
+    border: 3px black solid;
+}
+
+.aside {
+    width: 250px;
+    vertical-align: top;
+}
+
+.baniere {
+    position: relative;
+    width: 960px;
+    position:relative;
+    margin: auto;
+    border-radius: 5px;
+}
+
+.barnav {
+    width: 280px;
+    display: flex;
+}
+
+.barnav ul {
+    list-style-type: none;
+}
+
+.barnav ul a {
+    font-size: 1.3em;
+}
+
+.section {
+    display: flex;
+}
+
+.article {
+    position: relative;
+    float: right;
+    justify-content: space-between;
+    flex-direction: column;
+    margin-top: 5px;
+    margin-bottom: 200px;
+}
+

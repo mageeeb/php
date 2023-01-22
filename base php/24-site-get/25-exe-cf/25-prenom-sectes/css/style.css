@@ -1,0 +1,275 @@
+html, body {
+    height: 100%;
+    width: 100%;
+  }
+  .dp-c{
+    text-align: center;
+    width: 90%;
+    margin: 60px;
+    display: block;
+    background-color: gray;
+    border-radius: 10px;
+    height: 35%;
+  }
+  .t-c{
+    background-color: red;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  .t-form{
+    margin-left: 400px;
+  }
+  .bf-c{
+    border-radius: 10px;
+    border: transparent;
+    box-shadow: 2px #000;
+  }
+  .bg-main{
+    background-image: url('/25-prenom-sectes/pages/img/main.png');
+    width: 1280px;
+    height: 555px;
+    border-radius: 10px;
+    margin-left: 80px;
+  }
+  .t-m{
+    background-color: #fff;
+    opacity: 0.6;
+    height: 50px;
+    float: left;
+    margin-top: 250px;
+    border-radius: 10px;
+    margin-left: 550px;
+  }
+  .h1-main{
+    margin: 10px;
+  }
+  .card{
+    display: flex;
+    width: 90%;
+    background-color: lightgray;
+    border-radius: 10px;
+    justify-content: center;
+    margin-left: 5%;
+    padding: 20px;
+  }
+  .card-img{
+    padding: 10px;
+    border-radius: 10px;
+  }
+  .img-un{
+    border-radius: 10px;
+  }
+  .duo{
+    height: 600px;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    align-content: center;
+  }
+  .duo-un{
+    padding: 50px;
+    border-spacing: 300px;
+    background-color: lightgray;
+    border: 2px solid gray;
+    border-radius: 10px;
+  }
+  .img-duo{
+    border-radius: 10px;
+  }
+  .footer{
+    width: 100%;
+    background-color: brown;
+    text-align: center;
+  }
+  .d-sr{
+    background-color: gray;
+    width: 90%;
+    border-radius: 10px;
+    margin: auto;
+    text-align: center;
+    display: block;
+    justify-content: center;
+  }
+  .t-sr{
+    background-color: red;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    color: white;
+  }
+  .img-sr{
+    display: flex;
+    justify-content: center;
+  }
+  .text-sr{
+    font-size: 15px;
+    padding: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  .d-hist{
+    background-color: gray;
+    width: 90%;
+    border-radius: 10px;
+    margin: auto;
+    text-align: center;
+    display: block;
+    justify-content: center;
+  }
+  .t-hist{
+    background-color: red;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    color: white;
+  }
+  .img-hist{
+    display: flex;
+    justify-content: center;
+  }
+  .text-hist{
+    font-size: 15px;
+    padding: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  .nav {
+    background-color: rgb(212, 239, 242); 
+    list-style-type: none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav li {
+    display: inline-block;
+    font-size: 20px;
+    padding: 20px;
+  }
+  .error{
+    display: flex;
+    justify-content: center;
+    margin-top: 25vh;
+    padding: 50px;
+  }
+  .error-text{
+    font-family: 'Dancing Script', cursive;
+    font-size: 30px;
+    display: block;
+    border: 5px solid red;
+    border-radius: 10px;
+    text-align: center;
+    
+  }
+  div.text {
+      height: 50vh;
+  }
+  
+  div.error-text a {
+    text-justify: none;
+    text-decoration: none;
+    margin-right: 20px;
+  }
+  div.error-text a:hover {
+      color: red;
+      text-decoration: underline; 
+  }
+  .d-morm{
+    background-color: gray;
+    width: 90%;
+    border-radius: 10px;
+    margin: auto;
+    text-align: center;
+    display: block;
+    justify-content: center;
+  }
+  .t-morm{
+    background-color: red;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    color: white;
+  }
+  .img-morm{
+    display: flex;
+    justify-content: center;
+  }
+  .text-morm{
+    font-size: 15px;
+    padding: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  .d-scien{
+    background-color: gray;
+    width: 90%;
+    border-radius: 10px;
+    margin: auto;
+    text-align: center;
+    display: block;
+    justify-content: center;
+  }
+  .t-scien{
+    background-color: red;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    color: white;
+  }
+  .img-scien{
+    display: flex;
+    justify-content: center;
+  }
+  .text-scien{
+    font-size: 15px;
+    padding: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  .d-krish{
+    background-color: gray;
+    width: 90%;
+    border-radius: 10px;
+    margin: auto;
+    text-align: center;
+    display: block;
+    justify-content: center;
+  }
+  .t-krish{
+    background-color: red;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    color: white;
+  }
+  .img-krish{
+    display: flex;
+    justify-content: center;
+  }
+  .text-krish{
+    font-size: 15px;
+    padding: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  .d-templ{
+    background-color: gray;
+    width: 90%;
+    border-radius: 10px;
+    margin: auto;
+    text-align: center;
+    display: block;
+    justify-content: center;
+  }
+  .t-templ{
+    background-color: red;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    color: white;
+  }
+  .img-templ{
+    display: flex;
+    justify-content: center;
+  }
+  .text-templ{
+    font-size: 15px;
+    padding: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+  }

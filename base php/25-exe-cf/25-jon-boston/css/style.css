@@ -1,0 +1,110 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'roboto', sans-serif;
+}
+
+.banner {
+    background: url(../img/banner.jpeg);
+    width: 100%;
+    height: 30vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    color: pink;
+    border: red solid 2px;
+    padding: 1rem 2rem;
+    box-shadow: 5px 5px 20px black;
+    text-shadow: 1px 1px 10px red;
+}
+h2 {
+    color: pink;
+    padding: 2rem 0rem;
+    text-decoration: underline;
+}
+
+.navbar {
+    width: 100%;
+    height: 8vh;
+    background-color: pink;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0px 90px;
+}
+
+.navbar a {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.7rem;
+    color:aqua;
+    height: 100%;
+    width: fit-content;
+    line-height: 8vh;
+    padding: 0px 30px;
+    text-shadow: 1px 1px 10px red;
+}
+
+.navbar a:hover{
+    color: white;
+    background-color: aqua;
+}
+
+main {
+    width: 80%;
+    margin: auto;
+    min-height: 62vh;
+}
+
+p, h3 {
+    padding-bottom: 1.5rem;
+    text-align: justify;
+}
+
+.right {
+    float: right;
+    padding-left: 1rem;
+}
+
+.left {
+    float: left;
+    padding-right: 1rem;
+}
+
+.vid{
+    width: 100%;
+    padding: auto;
+    display: flex;
+    justify-content: center;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form input, textarea {
+    margin: 0.5rem 0rem;
+    width: 750px;
+    height: 2rem;
+    padding-left: 0.5rem;
+}
+
+textarea {
+    padding-top: 5px;
+    height: 20vh;
+}
+
+.sontre {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}

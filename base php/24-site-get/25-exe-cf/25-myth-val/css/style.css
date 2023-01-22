@@ -1,0 +1,82 @@
+html{
+    width: 1280px;
+    margin: 0 auto;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;  
+}
+
+/*header*/
+header{
+    text-align: center;
+    margin-bottom: 1em;
+}
+#banniere{
+    border-radius: 10px;
+    margin-bottom: 1em;
+}
+
+/*footer*/
+footer{
+    margin-top: 3em;
+    padding: auto 1em;
+}
+
+/*menu*/
+nav {    
+    margin: 2em auto;
+    position: sticky;
+    top: 0px;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color:beige;
+    z-index: 1000;
+}
+nav ul{
+    list-style: none;
+}
+nav ul li {
+    display: inline-block;
+    width: 160px;
+    height: 50px;
+    line-height: inherit;
+    margin-top: 20px;    
+    text-align: center;
+}    
+nav ul li a{    
+    text-decoration: none;
+    text-decoration-line: none;
+    font-weight: bold;
+    color: black;
+    font-size: 1em;
+}
+nav ul li a:hover{
+    color: white;
+    background-color: #A90331;
+}
+
+
+/*corps texte*/
+
+body{
+    margin-top: 2em;
+    width: 1280px;
+    text-align: center;
+    font-weight: 24px;
+}
+.error,.gallery-container h1, h1, #merci{
+    text-align: center;
+    font-family: cursive;
+    font-size: 2.5em;
+    height: 50px;
+    line-height: 50px;
+    color: rgba(180, 157, 157, 0.911);
+}
+
+/*Accueil*/
+#liste{
+    text-align: center;
+    text-decoration: none;
+    color: #A90331;
+}
+#liste:hover{
+    color: black;
+}

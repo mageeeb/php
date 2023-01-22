@@ -1,0 +1,1 @@
+<footer>American English <?php echo date("Y"); ?> &nbsp; Created by LVDR</footer>

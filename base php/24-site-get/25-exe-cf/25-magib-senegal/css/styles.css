@@ -1,0 +1,196 @@
+
+* {
+  padding: 0;
+  margin: 0;
+  
+}
+
+
+
+
+body {
+     margin: 0 auto;
+   width: 1280px;
+   position: relative;
+   
+}
+
+/*--------------------------------------------------home page ---------------------------------------------------------*/
+
+.baniere{
+  position: relative;
+
+}
+.imge{
+  width: 1280px;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.img{
+  
+    border: 2px solid black;
+    border-radius: 20px;
+   margin-left: 15em;
+}
+
+.imges{
+  border: 2px solid black;
+    border-radius: 20px;
+    margin-left: 3.5em;
+    margin-top: 10px;
+}
+
+.imgess{
+  width: 300px;
+}
+
+.baniere .text{
+  background: whitesmoke;
+    position: absolute;
+    text-align: center;
+    color: black;
+    width: 300px;
+    height: 80px;
+    top: 50px;
+    left: 32em;
+}
+.text{
+  text-transform: uppercase;
+  opacity: 75%;
+  line-height: 80px;
+
+}
+
+
+
+.img{
+  width: 300px;
+  position: relative;
+  left: 40%;
+  margin-top: 30px;
+}
+
+.menu{
+  border: 2px solid black;
+  list-style: none;
+    border-radius: 10px;
+    position: sticky;
+    
+}
+
+.navmenu ul li {
+  list-style-type: none;
+  display: inline-block;
+  padding: 10px 25px;
+  position: relative;
+  left: 20em;
+}
+
+.navmenu ul li a {
+  color: #A90331;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.navmenu ul li a:hover {
+  background-color: black;
+  color: white;
+  text-decoration: none;
+  border: 2px solid transparent;
+  font-weight: bold;
+  padding: 10px 25px;
+  
+  transition: transform 0.4s;
+}
+
+.capital ul li a {
+  
+  color: #A90331;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 25px;
+}
+
+
+
+.titre{
+  background-color: #A90331;
+  text-align: center;
+  margin-top: 5px;
+  border-radius: 10px;
+  color: white;
+}
+.home{
+  background-color: lightgrey;
+  border-radius: 10px;
+}
+
+p{
+  font-size: 20px;
+  margin: 20px 30px;
+}
+/*--------------------------------------geographie-----------------------------*/
+.geo{
+  background-color: lightgrey;
+  border-radius: 10px;
+}
+.geo img{
+  position: relative;
+  left: 15em;
+  
+}
+
+/*-----------------------------------histoire-----------------------------------*/
+.hist{
+  background-color: lightgrey;
+    border-radius: 10px;
+}
+.hist img{
+  position: relative;
+    left: 15em;
+}
+
+/*----------------------------------culture-------------------------------------*/
+.cult{
+  background-color: lightgrey;
+    border-radius: 10px;
+}
+.cult img{
+  position: relative;
+    left: 15em;
+}
+h2{
+  text-align: center;
+  text-decoration: underline;
+}
+
+/*-------------------------------contact------------------------------------------*/
+.cont{
+  background-color: lightgrey;
+    border-radius: 10px;
+}
+.cont img{
+  position: relative;
+    left: 15em;
+}
+
+h1{
+  font-style: italic;
+  font-size: 24px;
+}
+/*---------------------------------tourisme---------------------------------*/
+.tourisme{
+  background-color: lightgrey;
+    border-radius: 10px;
+}
+.tourisme img{
+  position: relative;
+    left: 15em;
+}
+
+/*-----------------------galerie-----------------*/
+tr img{
+  width: 26.5em;
+}

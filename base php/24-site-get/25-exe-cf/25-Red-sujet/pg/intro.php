@@ -1,0 +1,7 @@
+<main>
+<h1>Welcome to American English!</h1>
+    <h2>Introduction to American English</h2>
+    <p>American English (AmE, AE, AmEng, USEng, en-US),[a] sometimes called United States English or U.S. English, is the set of varieties of the English language native to the United States.[5] English is the most widely spoken language in the United States and in most circumstances is the de facto common language used in government, education, and commerce. Since the 20th century, American English has become the most influential form of English worldwide.[6][7][8][9][10][11]
+
+American English varieties include many patterns of pronunciation, vocabulary, grammar, and particularly spelling that are unified nationwide but distinct from other English dialects around the world.[12] Any American or Canadian accent perceived as lacking noticeably local, ethnic, or cultural markers is popularly called "General" or "Standard" American, a fairly uniform accent continuum native to certain regions of the U.S. and associated nationally with broadcast mass media and highly educated speech. However, historical and present linguistic evidence does not support the notion of there being one single "mainstream" American accent.[13][14] The sound of American English continues to evolve, with some local accents disappearing, but several larger regional accents having emerged in the 20th century.[15]</p>
+</main>

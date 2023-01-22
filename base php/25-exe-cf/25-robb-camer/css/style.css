@@ -1,0 +1,152 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.logo{
+    width: 250px;
+
+}
+.container{
+    width: 1280px;
+    margin: 0 auto;
+}
+header{
+ 
+    position: relative;
+    text-align: center;
+   
+}
+.nav{
+    width: 100%;
+    height: 50px;
+    border: 1px solid black;
+    position: sticky;
+    text-align: center;
+   
+}
+.nav a{
+    text-decoration: none;
+    font-size: 24px;
+    color: black;
+    padding: 20px;
+    line-height: 50px;
+   
+}
+.titre-de-page{
+    position: absolute;
+    top: 10%;
+    left: 30%;
+    color: #fff;
+    font-size: 3.5rem;
+    background-color: rgba(0, 0, 0, 0.345);
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 25px auto;
+
+    
+     
+}
+h1{
+    text-align: center;
+    margin-right: 20px;
+}
+
+.image-armoirie{
+    width: 600px;
+    display: block;
+    margin: 25px auto;
+}
+
+.text-intro{
+    margin: 25px 0;
+}
+
+.text-intro p{
+    text-align: justify;
+    margin: 15px 0;
+}
+
+.liens{
+    list-style-type: none;
+    background-color:#a36a14;
+    padding: 25px 0;
+    text-align: center;
+    margin: 25px 0;
+}
+
+.liens li{
+    display: inline-block;
+    margin: 0 25px;
+}
+
+.liens li a{
+    text-decoration: none;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.reference{
+    margin: 25px;
+    text-align: center;
+}
+.reference p a{
+    text-decoration: none;
+}
+
+.inner-list{
+    margin-left: 40px;
+}
+
+.galeries{
+    margin-top: 40px;
+    text-align: center;
+}
+
+.galeries img{
+    height: 320px;
+    width: 480px;
+}
+
+form{
+    width: 640px;
+    margin: 25px auto;
+    padding: 0 25px;
+}
+
+form .form-control input, textarea{
+    width: 100%;
+    padding: 15px;
+    border: #bababa 1px solid;
+    margin: 15px 0;
+    border-radius: 5px;
+}
+form .form-control .btn{
+    background-color:#a8772c;
+    color: #fff;
+    font-size: 1.4rem;
+    padding: 15px;
+    border-radius: 5px;
+    border: none;
+}
+form .form-control .btn:hover{
+    background-color: #a8772c;
+    cursor: pointer;
+}
+
+.liens-autres{
+    text-align: center;
+}
+.liens-autres ul{
+    list-style-type: none;
+}
+
+footer{
+   
+    text-align: center;
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+  
+}
+
