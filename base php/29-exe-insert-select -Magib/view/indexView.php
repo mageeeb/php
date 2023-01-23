@@ -18,36 +18,19 @@
             <input name='mailadresses' type="text" placeholder="votre adresse mail" required /><br>
             <input type="submit" value="Envoyer">
 
-            
-             <?php
-        foreach($adresses AS $item):
-        
-            /* if(isset($message)){
-        echo $message;
-    } */
-            ?>
-
-
-            <p><?= $item['nomadresses'] ?>... <a href="?adresse=<?= $item['idadresses'] ?>">Lire la suite</a></p>
-            le <?= $item['dateadresses'] ?></h4>
-            <hr>
-
 
             <?php
-            // si on a des rubriques
+
             if (!empty($item['idadresses'])) :
-                // conversion des chaînes de caractères contenant les id des sections et leurs noms en tableaux
+
                 $idsection = explode(",", $item['idadresses']);
                 $nomsection = explode("|||", $item['nomadresses']);
-                // var_dump($item)
+                //var_dump($item)
             ?>
             <?php
             endif;
             ?>
-
-            <?php
-            endforeach;
-            ?>
+        
 
         </form>
     </div>
