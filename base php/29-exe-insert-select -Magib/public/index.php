@@ -15,6 +15,8 @@ try{
 
 }
 
+include_once "../view/indexView.php";
+
 if(isset($_POST['nomadresses'], $_POST['mailadresses'])){
 
     $nom = htmlspecialchars(strip_tags(trim($_POST['nomadresses'])),ENT_QUOTES);
@@ -28,14 +30,29 @@ if(isset($_POST['nomadresses'], $_POST['mailadresses'])){
         //header("Location: ./");
     }
 
-    $sql = "SELECT nomadresses , mailadresses FROM adresses
-    ORDER BY dateadresses DESC;";    
-    $query = mysqli_query($db, $sql) or die('Erreur de $query');    
-    $resultatRubriques = mysqli_fetch_all($query,);
+    
 
 } elseif (isset($_GET['index'])) {
 
     // Code pour récupérer une entrée de la DB ICI
 }
 
-include_once "../view/indexView.php";
+            $sql = "SELECT nomadresses , mailadresses FROM adresses
+            ORDER BY dateadresses DESC;";
+            $result = mysqli_query($db, $sql) or die("Pas encore d'adresses");
+            $total= mysqli_num_rows($result);
+
+            if($total > 0){
+                while($row = mysqli_fetch_array($result)){
+                    echo $row ['nomadresses'];
+                    echo $row ['mailadresses'];
+    }
+} else {
+    // Erreur plus d'article
+    $error = "Pas encore d'adresses";
+            }
+
+           
+
+           
+
