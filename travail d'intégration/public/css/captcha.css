@@ -1,0 +1,36 @@
+#captcha {
+	-webkit-user-select: none; /* Safari */
+	-ms-user-select: none; /* IE 10+ */
+	user-select: none;
+
+	background-color: black;
+	display: inline;
+	padding: 0.8em;
+	border-radius: 5px;
+}
+
+.invalidCaptcha {
+	border: solid 2px red;
+	border-radius: 3px;
+}
+
+.invalidCaptcha + span::after {
+	content: "captcha invalide";
+	color: red;
+	font-size: 0.7em;
+	font-style: italic;
+	padding-left: 5px;
+}
+
+.validCaptcha {
+	border: solid 2px green;
+	border-radius: 3px;
+}
+
+.validCaptcha + span::after {
+	content: "vérification réussie";
+	color: green;
+	font-size: 0.7em;
+	font-style: italic;
+	padding-left: 5px;
+}

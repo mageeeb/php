@@ -17,7 +17,7 @@
                 <h2>Contactez-nous</h2>
             </div>
 
-            <form name="insertArticle" method="POST">
+            <form name="insertArticle" action="" method="POST">
                 <input type="text" name="nomadesses" id="" placeholder="Entrer votre nom" required>
                 <input type="email" name="mailadresses" id="" placeholder="Entrer votre email" required>
                 <button type="submit">Envoyer</button>
