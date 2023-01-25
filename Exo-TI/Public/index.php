@@ -11,7 +11,7 @@ try {
     exit (mb_check_encoding($e->getMessage()));
 }
 
-include_once "../Vue/indexvue.php";
+
 
 if (isset($_POST['nomadresses'], $_POST['mailadresses'])) {
     $nom = htmlspecialchars(strip_tags(trim($_POST['nomadresses'])), ENT_QUOTES);
@@ -27,10 +27,7 @@ if (isset($_POST['nomadresses'], $_POST['mailadresses'])) {
     $sql= "SELECT nomadresses, mailadresses FROM adresses ORDER BY dateadresses DESC;";
     $result= mysqli_query($db , $sql) or die ("Pas encore d'Adresses");
     $total = mysqli_num_rows($result);
-
-
-
-   
-    
+  
 }
+include_once "../Vue/indexvue.php";
 
