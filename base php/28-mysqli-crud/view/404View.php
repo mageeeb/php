@@ -8,16 +8,9 @@
 </head>
 <body>
     <h1>Erreur 404</h1>
-    <nav class="inline-block;">
-        <a href="./">Accueil</a>
-        <?php
-        foreach($resultatRubriques AS $item):
-        ?>
-        <a href="?section=<?=$item['idrubriques']?>"><?=$item['rub_title']?></a>
-        <?php
-        endforeach;
-        ?>
-    </nav>
+    <?php
+    include "inc/menuPublicView.php";
+    ?>
     <h2>Error 404 - <?=$error?></h2>
     
 </body>

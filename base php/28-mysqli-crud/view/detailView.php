@@ -8,16 +8,9 @@
 </head>
 <body>
     <h1>Article : <?=$resultatArticles['art_title']?></h1>
-    <nav class="inline-block;">
-        <a href="./">Accueil</a>
-        <?php
-        foreach($resultatRubriques AS $item):
-        ?>
-        <a href="?section=<?=$item['idrubriques']?>"><?=$item['rub_title']?></a>
-        <?php
-        endforeach;
-        ?>
-    </nav>
+    <?php
+    include "inc/menuPublicView.php";
+    ?>
     
     
     <div class="article">

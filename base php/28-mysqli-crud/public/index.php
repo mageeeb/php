@@ -39,63 +39,11 @@ Router
  */
 
 // si on est sur la page d'accueil
-// si il n'existe pas de variable get nommée section ou de variable get nommée article ou de variable get nommée auteur
-if(!isset($_GET['section']) && !isset($_GET['article']) && !isset($_GET['auteur'])){
+// si il n'existe pas de variable get nommée section ET de variable get nommée article ET de variable get nommée auteur ET de variable get nommée admin
+if(!isset($_GET['section']) && !isset($_GET['article']) && !isset($_GET['auteur']) && !isset($_GET['admin'])){
 
-    // requête qui récupère tous articles avec 255 caractères de texte avec l'auteur cliquable et les rubriques cliquables pour notre page d'accueil
-
-    $sql="SELECT a.idarticles, a.art_title, # selection de l'id de l'article et de son titre (a est l'alias de articles, voir près du FROM)
-    SUBSTR(a.art_text,1,250) AS art_text, # on coupe le texte de l'article pour n'en garder que 250 caractères (! 256 car décimal vers octal) et on crée un alias de sortie avec AS pour pouvoir gérer le tableau associatif dans un autre langage (PHP)
-    a.art_date,  # la date de l'article
-    u.user_login, u.idusers,  # Le login et mot de passe de l'auteur (u est l'alias de user voir près de INNER JOIN)
-
-    /* En MySQL et MariaDB, lorsqu'on utilise un GROUP BY, on utilise GROUP_CONCAT pour concaténer les lignes de résultat en un seul sans perdre de données */
-
-    GROUP_CONCAT(r.idrubriques) AS idrubriques, # on concatène les id, la virgule est le séparateur par défaut, on crée un alias de sortie
-    GROUP_CONCAT(r.rub_title SEPARATOR '|||') AS rub_title # on concatène les titre des sections, la virgule n'est plus un séparateur séucrisé, on met comme SEPARATOR les '|||' on crée un alias de sortie
-    FROM `articles` a # depuis la table article renommée en alias interne a
-
-        /* Jointure interne (voir https://raw.githubusercontent.com/WebDevCF2m2022/bases-php-2022/main/28-mysqli-crud/SQL_Joins.svg ) car il n'existe pas d'articles sans auteurs, et si c'était le cas (non innoDB OU possibilité de NULL pour la clef étrangère), le INNER JOIN (qui équivaut à JOIN) ne prendra pas les articles qui n'ont pas d'auteurs !
-        */
-
-        INNER JOIN users u # on joint de manière interne users (alias u) à articles 
-        ON u.idusers = a.users_idusers # condition de jointure 
-
-        /* jointure externe (LEFT, dans l'ordre de lecture, par rapport à la table à gauche, juste après le FROM), prendra les articles, même si ils ne sont pas dans une rubrique
-        Comme nous sommes en présence de many to many, il faut d'abord prendre la table de jointure (qui ne contient que des clefs étrangères)
-        */
-        LEFT JOIN articles_has_rubriques ahr # on joint la table de jointure qu'on renome ahr
-        ON ahr.articles_idarticles = a.idarticles # condition de jointure entre la table article et celle de jointure
-        LEFT JOIN rubriques r # on joint la table voulue par le many to many en utilisant la table de jointure et la table rubriques (renommée r)
-        ON ahr.rubriques_idrubriques = r.idrubriques # condition de jointure entre la table jointure (ahr) et la table voulue (r)
-        # WHERE a.idarticles = 5
-        /*
-        on groupe par l'index (clef primaire) de la table principale (FROM articles)
-        */
-        GROUP BY a.idarticles
-        /* classement par date de l'article descendant */
-        ORDER BY a.art_date DESC
-        "
-        ;
-
-        // exécution de la requête
-        $query = mysqli_query($db,$sql) or die('Erreur de $query');
-        // nombre d'articles récupérés
-        $nbArticles = mysqli_num_rows($query);
-        // transformation en tableau indexé contenant des tableaux associatifs
-        $resultatArticles = mysqli_fetch_all($query, MYSQLI_ASSOC);
-
-        // requête pour le menu des rubriques
-        $sql = "SELECT idrubriques, rub_title FROM rubriques
-        # WHERE idrubriques = 20
-         ORDER BY rub_title ASC;";
-        // exécution de la requête
-        $query = mysqli_query($db,$sql) or die('Erreur de $query');
-        // transformation en tableau indexé contenant des tableaux associatifs
-        $resultatRubriques = mysqli_fetch_all($query, MYSQLI_ASSOC);
-    
-        #var_dump($resultatRubriques);
-
+        // appel du contrôleur de la homepage
+        include_once '../controller/homepageController.php';
 
         // appel de la vue
         include_once '../view/homepageView.php';
@@ -103,62 +51,86 @@ if(!isset($_GET['section']) && !isset($_GET['article']) && !isset($_GET['auteur'
 // Si on est sur le détail d'un article (existence de la variable get article et qu'elle ne contient que du numérique entier non signé)
 }elseif(isset($_GET['article']) && ctype_digit($_GET['article'])){
 
-    // transformation en variable locale
-    $idArticle = (int) $_GET['article'];
+    // appel du contrôleur de la page de détail d'un article
+    include_once "../controller/detailController.php";
+        
+        // si on a un article (strictement différent de 0)
+    if ($nbArticles!==0) {
+        // appel de la vue
+        include_once '../view/detailView.php';
+    // sinon
+    }else{
+        // Erreur plus d'article
+        $error = "Cet article n'existe plus";
+        // on appel l'erreur 404
+        include_once '../view/404View.php';
+    }   
+
+// Si on est sur le détail d'un auteur
+}elseif(isset($_GET['auteur']) && ctype_digit($_GET['auteur'])){
+
+    // appel du contrôleur de la page de détail d'un article
+    include_once "../controller/auteurController.php";
+        
+        // si on a trouvé l'auteur
+    if ($nbAuteur!==0) {
+        // appel de la vue
+        include_once '../view/auteurView.php';
+    // sinon
+    }else{
+        // Erreur plus d'article
+        $error = "Cet auteur n'existe pas";
+        // on appel l'erreur 404
+        include_once '../view/404View.php';
+    }   
+
+// Si on est sur une section
+}elseif(isset($_GET['section']) && ctype_digit($_GET['section'])){
+
+    // appel du contrôleur
+    include_once "../controller/contreleurrubrique.php";
+        echo "<h1>on est ici</h1>";
+        // si on a trouvé la section
+    if ($nbSection!==0) {
+        // appel de la vue
+        include_once '../view/viewrubrique.php';
+    // sinon
+    }else{
+        // Erreur plus de section
+        $error = "Cette section n'existe plus";
+        // on appel l'erreur 404
+        include_once '../view/404View.php';
+    }
+
+// Si on est sur l'admin
+}elseif(isset($_GET['admin'])){
 
     // requête pour le menu des rubriques
     $sql = "SELECT idrubriques, rub_title FROM rubriques
     # WHERE idrubriques = 20
-     ORDER BY rub_title ASC;";
+    ORDER BY rub_title ASC;";
     // exécution de la requête
     $query = mysqli_query($db,$sql) or die('Erreur de $query');
     // transformation en tableau indexé contenant des tableaux associatifs
     $resultatRubriques = mysqli_fetch_all($query, MYSQLI_ASSOC);
 
-    $sql="SELECT a.idarticles, a.art_title, a.art_text, a.art_date,
-    u.user_login, u.idusers,  # Le login et mot de passe de l'auteur (u est l'alias de user voir près de INNER JOIN)
-
-    GROUP_CONCAT(r.idrubriques) AS idrubriques, # on concatène les id, la virgule est le séparateur par défaut, on crée un alias de sortie
-    GROUP_CONCAT(r.rub_title SEPARATOR '|||') AS rub_title # on concatène les titre des sections, la virgule n'est plus un séparateur séucrisé, on met comme SEPARATOR les '|||' on crée un alias de sortie
-
-    FROM `articles` a # depuis la table article renommée en alias interne a
-
-        INNER JOIN users u # on joint de manière interne users (alias u) à articles 
-        ON u.idusers = a.users_idusers # condition de jointure 
-
-        LEFT JOIN articles_has_rubriques ahr # on joint la table de jointure qu'on renome ahr
-        ON ahr.articles_idarticles = a.idarticles # condition de jointure entre la table article et celle de jointure
-        LEFT JOIN rubriques r # on joint la table voulue par le many to many en utilisant la table de jointure et la table rubriques (renommée r)
-        ON ahr.rubriques_idrubriques = r.idrubriques # condition de jointure entre la table jointure (ahr) et la table voulue (r)
-        WHERE a.idarticles = $idArticle
-        /*
-        on groupe par l'index (clef primaire) de la table principale (FROM articles)
-        */
-        GROUP BY a.idarticles
-        /* classement par date de l'article descendant */
-        ORDER BY a.art_date DESC
-        "
-        ;
-
-        // exécution de la requête
-        $query = mysqli_query($db,$sql) or die('Erreur de $query');
-        // nombre d'articles récupérés
-        $nbArticles = mysqli_num_rows($query);
-        // transformation en tableau indexé contenant des tableaux associatifs
-        $resultatArticles = mysqli_fetch_assoc($query);
-
-        //var_dump($resultatArticles);
+    // si le formulaire POST est envoyé
+    if(isset($_POST['art_title'],$_POST['art_text'],)){
+        // traitement de sécurité https://listphp.webdev-cf2m.be/ -> priorité des (), d'abord le trim, retire les espaces vides devant et derrière, puis le strip_tags qui retire tous les tags html, css, js etc..., puis htmlspecialchars qui encode les caractères dangereux en entités html, le ENT_QUOTE lui permet de convertire les caractères : ' et "
+        $title = htmlspecialchars(strip_tags(trim($_POST['art_title'])),ENT_QUOTES);
+        $texte = htmlspecialchars(strip_tags(trim($_POST['art_text'])),ENT_QUOTES);
         
-        // si on a un article (strictement différent de 0)
-if ($nbArticles!==0) {
-    // appel de la vue
-    include_once '../view/detailView.php';
-    // sinon
-}else{
-    // Erreur plus d'article
-    $error = "Cet article n'existe plus";
-    // on appel l'erreur 404
-    include_once '../view/404View.php';
-}
+        // si ils ne sont pas vides
+        if(!empty($title)&&!empty($texte)){
+            //on crée la requête
+            $sql = "INSERT INTO articles (art_title,art_text) VALUES ('$title','$texte');";
+            //on effectue l'insertion
+            mysqli_query($db,$sql) or die (mysqli_error($db));
+            // redirection vers l'accueil'
+            header("Location: ./");
+        }
+    }
 
+    // on appel la vue
+    include_once '../view/adminView.php';
 }

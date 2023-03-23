@@ -79,11 +79,14 @@ $sql4="SELECT a.idarticles, a.art_title,
     u.user_login, u.idusers, 
     r.*
     FROM `articles` a
+    
         INNER JOIN users u
         ON u.idusers = a.users_idusers
-        LEFT JOIN articles_has_rubriques ahr 
+
+
+    LEFT JOIN articles_has_rubriques ahr 
         ON ahr.articles_idarticles = a.idarticles
-        LEFT JOIN rubriques r 
+    LEFT JOIN rubriques r 
         ON ahr.rubriques_idrubriques = r.idrubriques
         "
         ;
