@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page d'accueil de tous nos articles</title>
+    <title>Auteur : <?=$resultatAuteur['user_login']?> - <?=$resultatAuteur['user_name']?> </title>
 </head>
 <body>
-    <h1>Page d'accueil de tous nos articles</h1>
+    <h1>Auteur : <?=$resultatAuteur['user_login']?> - <?=$resultatAuteur['user_name']?> </h1>
     <?php
     include "inc/menuPublicView.php";
     ?>
@@ -16,7 +16,7 @@
     // pas d'articles
     if(empty($resultatArticles)):
     ?>
-    <h2>Pas encore d'articles sur ce site</h2>
+    <h2>Pas encore d'articles par cet auteur</h2>
     <?php
     // au moins un article
     else:
@@ -47,7 +47,7 @@ if (!empty($item['idrubriques'])):
 endif;
     ?>
     <p><?=$item['art_text']?>... <a href="?article=<?=$item['idarticles']?>">Lire la suite</a></p>
-    <h4>Ecrit par <a href="?auteur=<?=$item['idusers']?>"><?=$item['user_login']?></a> le <?=$item['art_date']?></h4>
+    <h4>Le <?=$item['art_date']?></h4>
     <hr>
 
 
