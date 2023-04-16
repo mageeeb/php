@@ -1,8 +1,9 @@
 <?php
-function connectUserByUsername(PDO $db, string $uname, string $pwd) :bool|string {
+/*function connectUserByUsername(PDO $db, string $uname, string $pwd) :bool|string {
 
     // sql, on prend l'utilisateur si il existe même si son mot de passe ne correspond pas
-    $sql = "SELECT * FROM user WHERE username=?";
+    $sql = "SELECT * FROM user WHERE login_user = ?";
+    $pwd= "";
     $prepare = $db->prepare($sql);
     try{
         $prepare->execute([$uname]);
@@ -31,5 +32,20 @@ function connectUserByUsername(PDO $db, string $uname, string $pwd) :bool|string
         return "Login et/ou mot de passe incorrecte 1";
     }
 
+}*/
+
+
+function connectUser(PDO $db){
+  if(isset($_POST["envoi"])){
+    if(!empty($_POST["login_user"])AND !empty($_POST["pwd_user"])){
+      $name = htmlspecialchars($_POST["login_user"]);
+
+      $recupUser = $db->prepare("SELECT * FROM user WHERE login_user = ? AND pwd_user = ?");
+      $recupUser->execute(array($name));
+    }else{
+      echo "veuillez complété le champ...";
+      
+    }
+  } 
 }
 
