@@ -11,6 +11,10 @@ if(isset($_GET['p'])){
         case 'connect':
             include_once '../view/publicView/connectView.php';
             break;  
+
+        case 'Inscription':
+            include_once '../view/publicView/inscriptionView.php';
+            break; 
         default: 
             include_once '../view/publicView/homepageView.php';
             break;
