@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3307
--- Généré le : dim. 16 avr. 2023 à 10:09
+-- Généré le : mar. 18 avr. 2023 à 14:09
 -- Version du serveur : 10.10.2-MariaDB
 -- Version de PHP : 8.0.26
 
@@ -19,24 +19,23 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `connexion`
+-- Base de données : `test`
 --
-CREATE DATABASE IF NOT EXISTS `connexion` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `connexion`;
+CREATE DATABASE IF NOT EXISTS `test` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `test`;
 
 -- --------------------------------------------------------
 
 --
 -- Structure de la table `user`
 --
--- Création : dim. 16 avr. 2023 à 09:45
---
 
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE IF NOT EXISTS `user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` text NOT NULL,
-  `pwd` text NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `role` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 SET FOREIGN_KEY_CHECKS=1;
