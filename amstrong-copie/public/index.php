@@ -9,7 +9,7 @@ require_once '../model/contactMod.php';
 try {
 
     $db = new PDO(DB_TYPE.':host='.DB_HOST.';port='.DB_PORT.';dbname='.DB_NAME.';charset='.DB_CHARSET,DB_LOGIN,DB_PWD);
-
+        //echo "succes";
     
     if(ENV=="dev"||ENV=="test"){      
 
