@@ -19,11 +19,17 @@ $voiture->setPrice(15000);
 $voiture->setGenre("Normale");
 $voiture->setColore("Blue");
 $voiture->solde(5.5);
-var_dump($voiture);*/
+var_dump($voiture);
 
 $voiture = new Voiture ("Toyota","4x4","gris", 12000);
 $voiture->setPrix(15000);
 $voiture->solde(5.5);
 
 //var_dump($voiture->getColore());
+var_dump($voiture);*/
+
+$voiture= new Voiture("Renauld", "Mini-Bus","black",7500);
+$voiture->setPrice(8500);
+$voiture->promotion(10);
+
 var_dump($voiture);

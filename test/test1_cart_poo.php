@@ -71,7 +71,7 @@ class Voiture {
     }
         
     
-}*/
+}
 
 
 class Voiture{
@@ -92,6 +92,27 @@ class Voiture{
         $this->prix=$prix;
     }function solde(float $solde){
         $this->prix-= $this->prix *($solde/100);
+    }
+}*/
+
+class Voiture {
+    public $marque;
+    public $genre;
+    public $couleur;
+    public $prix;
+
+    function __construct($marque,$genre,$couleur,int $prix)
+    {
+        $this->marque=$marque;
+        $this->genre=$genre;
+        $this->couleur=$couleur;
+        $this->prix=$prix;
+    }function getMarque(){
+        return $this->marque;
+    }function setPrice(int $prix){
+        $this->prix=$prix;
+    }function promotion (float $promotion):void{
+        $this->prix = $this->prix *($promotion/100);
     }
 }
     
