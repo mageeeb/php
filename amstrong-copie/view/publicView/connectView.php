@@ -1,17 +1,35 @@
+
+<?php 
+
+$title = "Connect";
+include_once '../view/include/header.php';
+
+
+?>
+<form action="" method="POST">
+  <label for="login">Nom d'utilisateur :</label>
+  <input type="text" id="login" name="login"><br>
+
+  <label for="pwd">Mot de passe :</label>
+  <input type="password" id="pwd" name="pwd"><br>
+
+
 <?php
 include_once '../view/include/header.php';
 ?>
 <body>
 
-    <div class="container">
-        <form action="" class="col-md-6" method="POST">
-            <h1>Se connecter</h1>
-            <div class="form-group">
-                <input type="text" name="pseudo" id="" class="form-control" placeholder="Entrer votre pseudo">
-            </div>
-            <div class="form-group">
-                <input type="text" name="password" id="" class="form-control" placeholder="Entrer votre password">
-            </div>
+
+  <input type="submit" name="connect">
+</form>
+<button type="button"><a href="?p=sub">Inscrivez vous ici</a></button>
+
+
+<?php
+  if (isset($message)) {
+    echo "<h1>$message</h1>";
+  }
+?>
 
             <div class="form-group">
                 <a href="?p=Inscription" class="btn btn-warning">créer un compte</a>
@@ -26,3 +44,4 @@ include_once '../view/include/header.php';
 </body>
 
 </html>
+
