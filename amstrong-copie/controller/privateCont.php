@@ -52,79 +52,74 @@ else{
         $articleByUser = getArticleByUserId($db, $_SESSION['id_user']);
         include_once '../view/privateView/crudUser.php';
     }
-} if(isset($_GET['createPost'])){
-
-    // si on a envoyé le formulaire d'insertion
-    if(isset($_POST['title'],$_POST['content'],$_POST['user_id'])){
-        $UserId = (int) $_POST['user_id']; // si erreur => 0
-        $postTitle = htmlspecialchars(strip_tags(trim($_POST['title'])),ENT_QUOTES);
-        $postContent = htmlspecialchars(strip_tags(trim($_POST['content'])),ENT_QUOTES);
-        // ternaire ! si tableau les valeurs et clefs ne sont pas protégée contre une manipulation externe (injection etc...)
-        $idCateg = (isset($_POST['category_id'])&&is_array($_POST['category_id']))? $_POST['category_id'] : [];
-
-    if(!empty($UserId)&&!empty($postTitle)&&!empty($postContent)) {
-        //  Pouvoir insérer un article AVEC ses catégories
-        $insert = postAdminInsert($connectPDO, $UserId, $postTitle, $postContent, $idCateg);
-        if($insert===true){
-            $message = "Article inséré dans la DB";
-        }
-    }
-    }
-
-    // Appel des catégories pour le multi-choix dans le formulaire
-    $categoryChoice = getAllCategoryMenu($connectPDO);
-
-    // Appel des utilisateurs
-    $userChoice = getAllUsers($connectPDO);
-
-    // appel de la vue pour insertion
-    include "../view/privateView/privateInsertView.php";
-
-// on veut modifier un Post   
-}elseif(isset($_GET['updatePost'])&&ctype_digit($_GET['updatePost'])){
-
-    // si on a envoyé le formulaire de modification
-    if(isset($_POST['title'])){
-        // pas de vérification des variables $_POST au niveau du contrôleur !!! -> TOUTES LES Vérification doivent se trouver dans la fonction ! 
-        $post = postAdminUpdate($connectPDO,$_POST); 
-        // si le retour est une chaîne de caractère
-        if(is_string($post)){
-            // affichage de l'erreur
-            $message = $post;
-        }
-        // dans changements ont été effectués
-        if($post===true){
-            $message = "L'article a bien été modifié<script>
-            setTimeout(\"location.href = './';\", 2000);
-             </script>";
-        }
-    }
-
-    $idUpdatePost = (int) $_GET['updatePost'];
-
-    // chargement de l'article
-    # one article by id
-    $recupPost = postOneById($connectPDO,$idUpdatePost);
-
-    if(is_bool($recupPost)){
-        # récupération du menu pour l'erreur 404
-        $recupMenu = getAllCategoryMenu($connectPDO);
-        // création de l'erreur pour la 404
-        $error = "Cet article n'existe plus";
-        // appel de la vue 404
-        include_once "../view/publicView/404View.php";
-       
-    // on a trouvé l'article    
-    }else{
-
-    // Appel des catégories pour le multi-choix dans le formulaire
-    $categoryChoice = getAllCategoryMenu($connectPDO);
-
-    // Appel des utilisateurs
-    $userChoice = getAllUsers($connectPDO);
-
-    // appel de la vue pour insertion
-    include "../view/privateView/privateUpdateView.php";
 }
-  }
 
+// on a cliqué sur créer un article
+
+if(isset($_GET['p'])&&$_GET['p']=="article_add"){
+
+    // si on a envoyé le formulaire (toutes les variables POST attendues existent)
+    if(isset($_POST['name_article_add'],$_POST['min_description_article'],$_POST['max_description_article'],$_POST['sound_article_add'])){
+
+        //var_dump($_POST);
+        //exit();
+
+        // traitement des variables
+        $titre= htmlspecialchars(strip_tags(trim($_POST['name_article_add'])),ENT_QUOTES);
+        // exception pour le strip_tags qui va accepter
+        $texteMin= htmlspecialchars(strip_tags(trim($_POST['min_description_article']),'<p><br><a><img><h4><h5><b><strong><i><ul><li>'),ENT_QUOTES);
+        $texteMax= htmlspecialchars(strip_tags(trim($_POST['max_description_article']),'<p><br><a><img><h4><h5><b><strong><i><ul><li>'),ENT_QUOTES);
+        $urlSound= htmlspecialchars(strip_tags(trim($_POST['sound_article_add']),'<p><br><a><img><h4><h5><b><strong><i><ul><li>'),ENT_QUOTES);
+        //$idusers = (int) $_POST['idusers'];
+
+        // si un des champs est vide (n'a pas réussi la validation des variables POST)
+        if(empty($titre)||empty($texteMin)||empty($texteMax) ||empty($urlSound)){
+            $erreur = "Format des champs non valides";
+        }else{
+            // insertion d'article avec récupération de son id
+            $insert = insertArticle($db,$titre,$texteMin,$texteMax,$urlSound);
+
+            // insertion réussie (un id et pas false)
+            if($insert){
+
+                // si on a coché au moins une rubrique (existence de idrubriques)
+                if(isset($_POST['id_category'])){
+
+                    insertLinkArticlesWithRubriques($db,$insert,$_POST['id_category']);
+
+                }
+
+
+                // si on veut y ajouter une image
+                if(!empty($_FILES['theimages_name'])){
+                    $upload = getImageByarticleId($_FILES['theimages_name'],IMG_FORMAT,IMG_MAX_SIZE,IMG_UPLOAD_ORIGINAL,IMG_UPLOAD_MEDIUM,IMG_UPLOAD_SMALL,IMG_MEDIUM_WIDTH,IMG_MEDIUM_HEIGHT,IMG_SMALL_WIDTH,IMG_SMALL_HEIGHT,IMG_JPG_MEDIUM,IMG_JPG_SMALL);
+
+                    // l'image a bien été envoyée, donc on obtient un tableau
+                    if(is_array($upload)){
+                        // on insert l'image (et on récupère l'id de l'image)
+                        $idtheimages = getImageByarticleId($db,$_POST['theimages_title'],$upload[0],$insert);
+
+                    // en cas d'erreur (string)
+                    }else{
+                        $error = $upload;
+                    }
+                }
+                header("Location: ./");
+                exit;
+            }else{
+
+                $erreur ="Problème lors de l'insertion";
+            }
+
+        }
+    }
+
+    // on récupère tous les auteurs potentiels
+    //$recup_autors = getArticleByUserId($db,$id);
+    // on récupère toutes les rubriques potentielles
+    $recup_categs = getAllArticle($db);
+
+    require_once "../view/privateView/addArticleView.php";
+    //var_dump($_POST);
+    exit();
+}
