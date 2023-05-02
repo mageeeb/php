@@ -1,6 +1,10 @@
 <?php
 
+
 $title = 'inscription';
+include_once '../view/include/header.php';
+
+
 include_once '../view/include/header.php';
 
 ?>
@@ -27,11 +31,18 @@ include_once '../view/include/header.php';
                 <a href="?p=connect" class="btn btn-warning">connexion</a>
                 <input type="submit" value="créer mon compte" name="envoi" class="btn btn-primary">
             </div>
+
     </form>
 </div>
 <?php
 include_once '../view/include/footer.php';
 ?>
-</body>
 
+        </form>
+    </div>
+    <?php
+   include_once '../view/include/footer.php';
+    ?>
+
+</body>
 </html>
