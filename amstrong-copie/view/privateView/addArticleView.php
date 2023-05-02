@@ -15,7 +15,7 @@ var_dump($allArticle);
 
 <h2>Salut <?= $_SESSION['login_user']?></h2>
 
-<form action="" method="POST">
+<!--<form action="" method="POST">
     <input type="text" placeholder="nom de l'instrument" name="name_article_add">
     <textarea name="min_description_article" id="" cols="30" rows="10" placeholder="une courte introduction de votre article"></textarea>
     <textarea name="max_description_article" id="" cols="30" rows="10" placeholder="votre texte"></textarea>
@@ -35,4 +35,55 @@ var_dump($allArticle);
     <label for="perce hybride">perce cylindrique</label>
     <input type="submit" value="envois">
 
-</form>
+</form>-->
+<form action="" enctype="multipart/form-data"  name="insertion" method="post">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Votre titre :</label>
+                        <input name="name_article_add" type="text" class="form-control" placeholder="Votre titre" required>
+
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">une courte introduction de votre article</label>
+                        <textarea name="min_description_article" id="" cols="30" rows="10" placeholder="une courte introduction de votre article"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Votre texte</label>
+                        <textarea name="max_description_article" id="" cols="30" rows="20" placeholder="votre texte"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Votre sound</label>
+                        <input type="text" placeholder="extrait sonore mp3 (url)" name="sound_article_add">
+                    </div>
+                    
+                    <div class="form-group">
+                    <p>Choisissez une ou plusieurs catégorie(s)</p>
+    <input type="checkbox" name="perce cylindrique" id="perce cylindrique">
+    <label for="perce cylindrique">perce cylindrique</label>
+        <hr>
+    <input type="checkbox" name="perce conique" id="perce conique">
+    <label for="perce conique">perce conique</label>
+        <hr>
+    <input type="checkbox" name="perce hybride" id="perce hybride">
+    <label for="perce hybride">perce cylindrique</label>
+    <input type="submit" value="envois">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Envoyer</button>
+
+            <hr>
+                    <h3>Ajouter des images</h3>
+                <div class="form-group">
+                    <label=>Votre image :</label>
+                    <input name="theimages_name" type="file" class="form-control" placeholder="Votre image" >
+                </div>
+                <div class="form-group">
+                    <label=>Votre image :</label>
+                    <input name="theimages_name" type="file" class="form-control" placeholder="Votre image" >
+                </div>
+                <div class="form-group">
+                    <label=>Votre image :</label>
+                    <input name="theimages_name" type="file" class="form-control" placeholder="Votre image" >
+                </div>
+            </form>
+            </div>
+        </div>
+    </div>

@@ -166,57 +166,27 @@ function getArticleByUserId(PDO $db, $userId){
     return $bp;
 }
 
-//insertion article vec categ
-function postAdminInsert(PDO $db, int $idUser, string $title, string $content, array $idCateg=[]):bool{
-    // début de transaction, arrête les autocommit, il faut appeler $db->commit() pour que toutes les requêtes soient effectivement validées
-    $db->beginTransaction();
-    // requêtes préparées contre les injections SQL (! au tableau $idCateg, on peut falsifier son contenu)
-    $preparePost = $db->prepare("INSERT INTO `post` (`title`,`content`,`user_id`) VALUES (:title, :content, :iduser)");
+// insertion d'un nouvel article
+function insertArticle(PDO $db,$titre,$texteMin,$texteMax,$urlSound){
 
-    $preparePost->bindValue(":iduser", $idUser, PDO::PARAM_INT);
-    $preparePost->bindValue(":title", $title, PDO::PARAM_STR);
-    $preparePost->bindValue(":content", $content, PDO::PARAM_STR);
-
-    // insertion du Post
-
-    $preparePost->execute();
-
-    // récupération immédiate de l'id inséré par la connexion de l'utilisateur actuel (table Post)
-    $postLastInsertId = $db->lastInsertId();
-
-
-    // pour insérer les catégories dans la table M2M, on ne garde que les valeurs qui doivent être des integer dans des champs category_has_post
-
-    // si le tableau n'est pas vide (catégories potentielles)
-if(!empty($idCateg)){
-
-    // requête préparée
-    $prepareCategory_has_post = $db->prepare("INSERT INTO `category_has_post` (`category_id`,`post_id`) VALUES (:idcateg, :idpost)");
-    // $valeur par défaut (sera remplacée en cas de validité du tableau)
-    $categId = 100;
-
-    // attribution des valeurs par référence, $value est donc une valeur par défaut qui ne sera pas utilisée
-    $prepareCategory_has_post->bindParam("idpost",$postLastInsertId,PDO::PARAM_INT);
-    $prepareCategory_has_post->bindParam("idcateg",$categId,PDO::PARAM_INT);
-
-    foreach ($idCateg as $value) {
-        if(ctype_digit($value)){
-            $categId = (int) $value;
-            $prepareCategory_has_post->execute();
-        }
-    }
-
+    $sql="INSERT INTO articles (name_article,min_description_article,max_description_article,sound_article) VALUES ('$titre','$texteMin',$texteMax,$urlSound);";
+    $request = mysqli_query($db,$sql) or die(mysqli_error($db));
+    // si l'article est bien inséré, on renvoie son ID
+    return ($request)? mysqli_insert_id($c) :false;
 }
 
-    try{
-        // on essaye d'envoyer toutes nos requêtes à la DB
-        $db->commit();
-        return true;
-    }catch(Exception $e){
-        // si une erreur dans au moins 1 requête
-        // on les annule toutes
-        $db->rollBack();
-        die($e->getMessage());
-    }
+// insertion du lien avec les catégories dans articles_has_rubriques
+function insertLinkArticlesWithRubriques($c,$idarticles,$tabIdRubriques){
 
+    // préparation de notre requête SQL avant la boucle
+    $sql = "INSERT INTO articles_has_rubriques (articles_idarticles,rubriques_idrubriques) VALUES ";
+    // tant que l'on a des rubriques cochées
+    foreach($tabIdRubriques AS $item){
+        // on allonge notre requête SQL (évite des allez retour PHP/SQL)
+        $sql .= "($idarticles,$item),";
+    }
+    // on retire la virgule de fin avec substr pour éviter une faute SQL (la virgule doit être suivie de valeurs)
+    $sql = substr($sql,0,-1);
+    $query = mysqli_query($c,$sql) or die(mysqli_error($c));
+    return ($query)? true: false;
 }
