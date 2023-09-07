@@ -13,6 +13,9 @@ include_once '../view/include/header.php';
         <th>description</th>
         <th>date</th>
         <th>auteur</th>
+        <!--/modif/-->
+        <th>url</th>
+        <!--//-->
         <th>catégorie</th>
         <th>update</th>
         <th>delete</th>
@@ -28,6 +31,9 @@ include_once '../view/include/header.php';
             <td><?= $item['min_description_article'] ?></td>
             <td><?= $item['date_article'] ?></td>
             <td><?= $item['login_user'] ?></td>
+            <!--/modif/-->
+            <td><?= $item['url'] ?></td>
+            <!--//-->
             <td><?= $item['name_category'] ?></td>
             <td><a href="?article_update=<?= $item['id_article'] ?>">update</a></td>
             <td><a onclick="void(0);let a=confirm('Voulez-vous vraiment supprimer \'<?= $item['name_article'] ?>\' ?'); if(a){ document.location = '?p=d&article_delete=<?= $item['id_article'] ?>'; };" href="#">delete</a></td>

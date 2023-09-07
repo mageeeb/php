@@ -7,13 +7,14 @@ include_once '../view/include/header.php';
 
 <!-- <style> et <hr> à enlever quand il faudra styliser -->
 <style>
-    form input, form textarea {
+    form input,
+    form textarea {
         display: block;
         margin: 0.5rem;
     }
 </style>
 
-<h2>Salut <?= $_SESSION['login_user']?></h2>
+<h2>Salut <?= $_SESSION['login_user'] ?></h2>
 
 <form action="" method="POST">
     <input type="text" placeholder="nom de l'instrument" name="name_article">
@@ -23,16 +24,20 @@ include_once '../view/include/header.php';
     <input type="text" placeholder="URL photo 1 (obligatoire)" name="url_image_1">
     <input type="text" placeholder="URL photo 2 (optionnelle)" name="url_image_2">
     <input type="text" placeholder="URL photo 3 (optionnelle)" name="url_image_3">
-        <hr>
+    <hr>
     <p>Choisissez une ou plusieurs catégorie(s)</p>
-    <input type="checkbox" name="perce cylindrique" id="perce cylindrique">
-    <label for="perce cylindrique">perce cylindrique</label>
+    <?php
+    //modif
+    foreach ($allCateg as $item) :
+    ?>
+        <input type="checkbox" name="category_id_category[]" value="<?= $item['id_category'] ?>" id="<?= $item['name_category'] ?>">
+        <label for="<?= $item['name_category'] ?>"><?= $item['name_category'] ?></label>
         <hr>
-    <input type="checkbox" name="perce conique" id="perce conique">
-    <label for="perce conique">perce conique</label>
-        <hr>
-    <input type="checkbox" name="perce hybride" id="perce hybride">
-    <label for="perce hybride">perce cylindrique</label>
-    <input type="submit" value="envois" name="submit">
+    <?php
+    endforeach;
+    ?>
+    <input type="submit" value="envoie" name="submit">
+
+    <!--//-->
 
 </form>

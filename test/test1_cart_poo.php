@@ -95,24 +95,34 @@ class Voiture{
     }
 }*/
 
-class Voiture {
-    public $marque;
-    public $genre;
-    public $couleur;
-    public $prix;
+//class Voiture {
+//    public $marque;
+//    public $genre;
+//    public $couleur;
+//    public $prix;
+//
+//    function __construct($marque,$genre,$couleur,int $prix)
+//    {
+//        $this->marque=$marque;
+//        $this->genre=$genre;
+//        $this->couleur=$couleur;
+//        $this->prix=$prix;
+//    }function getMarque(){
+//        return $this->marque;
+//    }function setPrice(int $prix){
+//        $this->prix=$prix;
+//    }function promotion (float $promotion):void{
+//        $this->prix = $this->prix *($promotion/100);
+//    }
+//}
 
-    function __construct($marque,$genre,$couleur,int $prix)
-    {
-        $this->marque=$marque;
-        $this->genre=$genre;
-        $this->couleur=$couleur;
-        $this->prix=$prix;
-    }function getMarque(){
-        return $this->marque;
-    }function setPrice(int $prix){
-        $this->prix=$prix;
-    }function promotion (float $promotion):void{
-        $this->prix = $this->prix *($promotion/100);
+
+    class voiture{
+        public int $quantity;
+        public float $prix;
+        public string $color;
+        public string $marque;
+        public int $NbVitess;
+
+        
     }
-}
-    
