@@ -1,0 +1,232 @@
+
+.header {
+    position: relative;
+    flex-direction: column;
+    margin-top: 26px;
+    min-height: 467px;
+    width: 1329px;
+ 
+   background-color: white;
+}
+.div img{
+    width: 526px;
+}
+.image {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.image img{
+    width: 200px;
+}
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+   
+}
+.home li {
+    list-style-type: none;
+        display: inline-block;
+        padding: 15px 25px;
+        position: relative;
+        right: 1em;
+    
+}
+
+.home li a {
+color: black;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: capitalize;
+
+   
+}
+ul li a:hover{
+	background-color:yellow;
+	color: black;
+	text-decoration: none;
+	border: 2px solid transparent;
+	font-weight: bold;
+	padding: 10px 25px;
+	border-radius: 30px;
+	transition: transform .4s;
+}
+    .text{
+        background-color: yellow;
+        text-align: center;
+        position: relative;
+        top: 50px;
+    }
+    p{
+       font-weight: bold;
+    }
+    .button{
+        background-color: black;
+    }
+
+    #button p{
+        color: white;
+    }
+   .logo img{
+        width: 100px;
+        
+   }
+   .logo{
+    position: relative;
+    left: 30em;
+    justify-content: space-between;
+    display: flex;
+   width: 400px;
+    top: 100px;
+   }
+
+   
+
+   /*--------------programmes-------*/
+
+   .prog{
+    padding-top: 40px;
+   }
+   .prog0{
+    display: flex;
+    position: relative;
+        bottom: 20px;
+   }
+  
+   .prog1{
+    display: flex;
+    position: relative;
+    
+   }
+
+   .prog2 {
+       display: flex;
+       position: relative;
+       top: 30px;
+   }
+
+   .prog3 {
+       display: flex;
+       position: relative;
+       top: 60px;
+   }
+
+     .prog4 {
+            display: flex;
+            position: relative;
+            top: 90px;
+        }
+  .progg1{
+    position: relative;
+    left: 50px;
+    bottom: 20px;
+  }
+
+  /*-------------studio bronks----*/
+  .studio{
+    display: flex;
+  }
+
+  .studiotext{
+    position: relative;
+    left: 30px;
+  }
+
+  /*-----------------Footer-------------------*/
+ .logo{
+
+ }
+  
+  .footer {
+      background-color: black;
+      position: relative;
+      top: 150px;
+      text-align: center;
+
+  }
+
+  .footer p {
+      color: white;
+
+  }
+
+ /*-----------------------------404--------------------------*/
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box
+ }
+
+ body {
+     min-height: 100vh;
+     display: grid;
+     place-items: center;
+     background-color: #060606;
+ }
+
+ .clock {
+     display: flex;
+     gap: calc(var(--segment-length) / 2);
+     --segment-width: 2vmin;
+     --segment-length: 6vmin;
+     --segment-gap: .75vmin;
+     --segment-color: #1D1E22;
+     --segment-color-active: red;
+     --colon-color: white;
+     transform: skew(-15deg)
+ }
+
+ .colon {
+     display: grid;
+     width: var(--segment-width);
+     gap: var(--segment-width);
+     align-self: center;
+ }
+
+ .colon::before,
+ .colon::after {
+     content: "";
+     aspect-ratio: 1;
+     background-color: var(--colon-color);
+     border-radius: 50%;
+ }
+
+ .digit {
+     display: grid;
+     gap: var(--segment-gap);
+     grid-template:
+         '.... r1c2 ....' var(--segment-width) 'r2c1 .... r2c3' var(--segment-length) '.... r3c2 ....' var(--segment-width) 'r4c1 .... r4c3' var(--segment-length) '.... r5c2 ....' var(--segment-width) /
+         var(--segment-width) var(--segment-length) var(--segment-width)
+ }
+
+ .digit>div {
+     grid-area: var(--ga);
+     position: relative;
+ }
+
+ .digit>div::after {
+     content: "";
+     position: absolute;
+     background: var(--bg, var(--segment-color));
+     --i: calc(var(--segment-width) * -.5);
+     inset: var(--inset, var(--i) 0);
+     --p1: calc(var(--segment-width) / 2);
+     --p2: calc(100% - var(--segment-width) / 2);
+     clip-path: var(--clip, polygon(50% 0, 100% var(--p1), 100% var(--p2), 50% 100%, 0% var(--p2), 0% var(--p1)))
+ }
+
+ .digit>div:nth-child(3n+1)::after {
+     --inset: 0 var(--i);
+     --clip: polygon(var(--p1) 0, var(--p2) 0, 100% 50%, var(--p2) 100%, var(--p1) 100%, 0 50%);
+ }
+
+ .digit>div[data-active="1"] {
+     filter: drop-shadow(0 0 0.75vmin var(--segment-color-active));
+ }
+
+ .digit>div[data-active="1"]::after {
+     background-color: var(--segment-color-active);
+ }
